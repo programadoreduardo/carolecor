@@ -6,7 +6,8 @@
 
 export const colors = {
     background: '#f7e3ca',
-    button: '#f7bdb5'
+    button: '#f7bdb5',
+    white: '#fff'
     
   
 };

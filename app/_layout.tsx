@@ -5,8 +5,7 @@ export default function RootLayout(){
         <Stack>
             <Stack.Screen name="index" options={{headerShown: false}}/>
             <Stack.Screen name="conta"/>
-            <Stack.Screen name="criarConta"/>
-
+            <Stack.Screen name="criarConta" options={{headerShown: false}}/>
         </Stack>
     )
 }
