@@ -16,24 +16,24 @@ export default function HomeScreen() {
     router.push('/conta')
   }
 
-  function criarConta(){
-    router.push('/criarConta')
-  }
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar backgroundColor={colors.background} />
       <View style={styles.container}>
         <Image source={require('../assets/images/logo.png')} style={styles.logo} />
 
-        <TouchableOpacity style={styles.button1} onPress={criarConta}>
-          <Text style={styles.textButton}>Criar conta </Text>
-        </TouchableOpacity>
+        <Link href={'/criarConta'} asChild>
+          <TouchableOpacity style={styles.button1}>
+            <Text style={styles.textButton}>Criar conta </Text>
+          </TouchableOpacity>
+        </Link>
 
-        
-        <TouchableOpacity style={styles.button2} onPress={conta} >
-          <Text style={styles.textButton}> Já Tenho conta</Text>
-        </TouchableOpacity>
+
+        <Link href={'/conta'} asChild>
+          <TouchableOpacity style={styles.button2}>
+            <Text style={styles.textButton}> Já Tenho conta</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </SafeAreaView>
   )

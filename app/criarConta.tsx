@@ -14,8 +14,10 @@ export default function CreateUser() {
 
     <View style={styles.container}>
       <Header 
-      step='passo 2'
+      step='Voltar a pagina inicial'
       title='vamos começar'/>
+
+      
      {/*  <Image source={require('../assets/images/logoSemFundo.png')} style={styles.logo} /> */}
 
     </View>
