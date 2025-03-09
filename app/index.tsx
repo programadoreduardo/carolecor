@@ -22,6 +22,8 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <Image source={require('../assets/images/logo.png')} style={styles.logo} />
 
+        <View style={styles.buttonsView}>
+
         <Link href={'/criarConta'} asChild>
           <TouchableOpacity style={styles.button1}>
             <Text style={styles.textButton}>Criar conta </Text>
@@ -34,6 +36,8 @@ export default function HomeScreen() {
             <Text style={styles.textButton}> Já Tenho conta</Text>
           </TouchableOpacity>
         </Link>
+
+        </View>
       </View>
     </SafeAreaView>
   )
@@ -48,12 +52,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     alignItems: 'center',
+    justifyContent: 'space-between'
   },
   logo: {
     marginTop: 50, // Ajuste para garantir espaço no topo
     width: 200, // Ajuste conforme necessário
     height: 100, // Ajuste conforme necessário
     resizeMode: 'contain',
+  },
+  buttonsView:{
+    width: '100%',
+    alignItems: 'center',
+    paddingBottom: 30
   },
   button1: {
     marginTop: 450,
