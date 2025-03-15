@@ -14,11 +14,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { colors } from '@/constants/colors';
 import { useState } from 'react';
+import { router } from 'expo-router';
 
 const schema = z.object({
   name: z.string().min(1, { message: "O nome é obrigatório" }),
   email: z.string().min(1, { message: "O email é obrigatório" }).email({ message: "Email inválido" }),
-  password: z.string().min(4, { message: "A senha deve ter pelo menos 6 caracteres" }),
+  password: z.string().min(4, { message: "A senha deve ter pelo menos 5 caracteres" }),
   password2: z.string().min(1, { message: "As senhas não conferem" }),
   telefone: z.string().min(1, { message: "O telefone é obrigatório" }),
 }).refine((data) => data.password === data.password2, {
@@ -37,7 +38,10 @@ export default function CreateUser() {
   })
 
   function handleCreate(data: FormData) {
-    alert(JSON.stringify(data, null, 2));
+    router.push({
+      pathname:"/acesso",
+      params: data, // Passa os dados do formulário como parâmetros
+    })
   }
 
   return (
